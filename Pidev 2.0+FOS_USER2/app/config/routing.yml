@@ -1,0 +1,16 @@
+reservation_activite:
+    resource: "@ReservationActiviteBundle/Resources/config/routing.yml"
+    prefix:   /resactivite
+
+activity:
+    resource: "@ActivityBundle/Resources/config/routing.yml"
+    prefix:   /activite
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /

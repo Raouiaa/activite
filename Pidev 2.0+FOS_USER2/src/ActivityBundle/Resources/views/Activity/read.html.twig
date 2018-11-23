@@ -1,0 +1,32 @@
+<center>
+    <h1>Liste des activités</h1>
+    <a href="{{ path('read_activity')}}"> <input type="button" value="Ajouter une activité"> </a>
+
+    <table border="1">
+        <tr>
+            <th>Adresse de l'activité</th>
+            <th>Date de l'activité</th>
+            <th>Type de l'activité</th>
+            <th>Description</th>
+            <th>Image de l'activité</th>
+            </tr>
+       {% for A in activity %}
+           <tr>
+
+        <td>{{ A.adresseactivite }}</td>
+               <td>{{ A.dateactivite|date }}</td>
+               <td>{{ A.typeactivite }}</td>
+               <td>{{ A.description }}</td>
+               <td>{{ A.imagactivity }}</td>
+               <td><a href="{{ path('update_activity',{'idActivite':A.idActivite}) }}">Modifier</a></td>
+               <td><a href="{{ path('delete_activity',{'idActivite':A.idActivite}) }}">Delete</a></td>
+           </tr>
+        {% endfor %}
+
+
+
+
+    </table>
+
+
+</center>
