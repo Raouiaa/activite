@@ -1,0 +1,61 @@
+<?php
+
+namespace ActivityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Activity
+ *
+ * @ORM\Table(name="activity")
+ * @ORM\Entity
+ */
+class Activity
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresseActivite", type="string", length=255, nullable=false)
+     */
+    private $adresseactivite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idActivite", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idactivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateActivite", type="string", length=255, nullable=false)
+     */
+    private $dateactivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typeActivite", type="string", length=255, nullable=false)
+     */
+    private $typeactivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Description", type="string", length=255, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagActivity", type="string", length=255, nullable=false)
+     */
+    private $imagactivity;
+
+
+}
+

@@ -1,0 +1,15 @@
+activity_homepage:
+    path:     /
+    defaults: { _controller: ActivityBundle:Default:index }
+read_activity:
+    path:     /readac
+    defaults: { _controller: ActivityBundle:Activity:read }
+create_activity:
+    path:     /createac
+    defaults: { _controller: ActivityBundle:Activity:create }
+update_activity:
+    path:     /updateac{idActivite}
+    defaults: { _controller: ActivityBundle:Activity:update }
+delete_activity:
+    path:     /deleteac{idActivite}
+    defaults: { _controller: ActivityBundle:Activity:delete }

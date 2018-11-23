@@ -1,0 +1,7 @@
+activity:
+    resource: "@ActivityBundle/Resources/config/routing.yml"
+    prefix:   /activite
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
