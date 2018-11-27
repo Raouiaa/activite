@@ -1,0 +1,29 @@
+{% block content %}
+<center>
+    <h1>The List of Activities</h1>
+    <a href="{{ path('read_activity')}}"> <input type="button" value="Add an activity"> </a>
+
+
+    <table border="1">
+        <tr>
+            <th>Activity's adress</th>
+            <th>Activity's date</th>
+            <th>Activity's type</th>
+            <th>Description</th>
+            <th>Activity's image</th>
+            </tr>
+       {% for A in activity %}
+           <tr>
+
+        <td>{{ A.adresseactivite }}</td>
+               <td>{{ A.dateactivite|date }}</td>
+               <td>{{ A.typeactivite }}</td>
+               <td>{{ A.description }}</td>
+               <td>{{ A.imagactivity }}</td>
+               <td><a href="{{ path('update_activity',{'idActivite':A.idActivite}) }}">Update</a></td>
+               <td><a href="{{ path('delete_activity',{'idActivite':A.idActivite}) }}">Delete</a></td>
+           </tr>
+        {% endfor %}
+    </table>
+</center>
+{% endblock %}

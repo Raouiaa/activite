@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block v%}
+    <h1>Welcome</h1>
+
+    <h3>Please add an activity</h3>
+
+       {{ form_start(form) }}
+
+    <h5>Activity adress:<span style="color: red; "> *</span></h5>
+    {{ form_widget(form.adresseactivite) }}
+    <span id="actadress_error" style="display: none; color: red; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-exclamation-triangle"></i></span>
+    <span id="actadress_succ" style="display: none; color: #1e7e34; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-check-circle"></i></span>
+<br>
+    <h5>Activity Type:<span style="color: red; "> *</span></h5>
+    {{ form_widget(form.typeactivite) }}
+    <span id="acttype_error" style="display: none; color: red; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-exclamation-triangle"></i></span>
+    <span id="acttype_succ" style="display: none; color: #1e7e34; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-check-circle"></i></span>
+<br>
+    <h5>Activity Description:<span style="color: red; "> *</span></h5>
+    {{ form_widget(form.description) }}
+    <span id="actdes_error" style="display: none; color: red; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-exclamation-triangle"></i></span>
+    <span id="actdes_succ" style="display: none; color: #1e7e34; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-check-circle"></i></span>
+<br>
+    <h5>Activity Date:<span style="color: red; "> *</span></h5>
+    {{ form_widget(form.dateactivite, {'type' : 'Date', 'attr' : {'class' : 'form-control'}}) }}
+    <span id="actdate_error" style="display: none; color: red; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-exclamation-triangle"></i></span>
+    <span id="actdate_succ" style="display: none; color: #1e7e34; position: absolute; margin-left: 270px; margin-top: -26px"><i class="fa fa-check-circle"></i></span>
+<br>
+    <h5>Choose an activity picture:<span style="color: red; "> *</span></h5> <br>
+    <button type="submit" id="picture">Add activity</button>
+
+    {{ form_end(form) }}
+
+{% endblock %}
+    {% block javascripts %}
+
+    <script src="{{ asset('js/jquery-2.2.3.min.js') }}"></script>
+
+    <script type="text/javascript" >
+
+
+    $('#activitybundle_activity_adresseactivite').keyup(function (){
+        var act=$('#activitybundle_activity_adresseactivite').val();
+        if(act.length<0 ){
+            $("#actadress_error").css("display","block");
+            $("#actadress_succ").css("display","none");
+        }
+        else{
+            $("#actadress_error").css("display","none");
+            $("#actadress_succ").css("display","block");
+        }
+
+    });
+    $('#activitybundle_activity_typeactivite').keyup(function () {
+        var act=$('#activitybundle_activity_typeactivite').val();
+        if(act.length<2)
+        {
+            $("#acttype_error").css("display","block");
+            $("#acttype_succ").css("display","none");
+        }
+        else
+        {
+            $("#acttype_error").css("display","none");
+            $("#acttype_succ").css("display","block");
+        }
+
+    });
+    $('#activitybundle_activity_typeactivite').keyup(function () {
+        var act=$('#activitybundle_activity_typeactivite').val();
+        if(act.length<2)
+        {
+            $("#acttype_error").css("display","block");
+            $("#acttype_succ").css("display","none");
+        }
+        else
+        {
+            $("#acttype_error").css("display","none");
+            $("#acttype_succ").css("display","block");
+        }
+
+    });
+    $('#activitybundle_activity_description').keyup(function () {
+        var act=$('#activitybundle_activity_description').val();
+        if(act.length<2)
+        {
+            $("#actdes_error").css("display","block");
+            $("#actdes_succ").css("display","none");
+        }
+        else
+        {
+            $("#actdes_error").css("display","none");
+            $("#actdes_succ").css("display","block");
+        }
+
+    })
+
+
+</script>
+
+
+</center>
+{% endblock %}
