@@ -1,0 +1,4 @@
+services:
+#    reservation_activite.example:
+#        class: ReservationActiviteBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

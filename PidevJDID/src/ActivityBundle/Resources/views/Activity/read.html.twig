@@ -1,0 +1,30 @@
+{% extends 'adminPanel.html.twig' %}
+{% block body %}
+<center>
+    <div style="margin-bottom: 50px; margin-top: 40px">
+    <h1>The List of Activities</h1>
+
+    <table border="1">
+        <tr>
+            <th>Activity's adress</th>
+            <th>Activity's date</th>
+            <th>Activity's type</th>
+            <th>Description</th>
+            <th>Activity's image</th>
+            </tr>
+       {% for A in activity %}
+           <tr>
+
+        <td>{{ A.adresseactivite }}</td>
+               <td>{{ A.dateactivite|date }}</td>
+               <td>{{ A.typeactivite }}</td>
+               <td>{{ A.description }}</td>
+               <td><img src="{{ asset ('uploadsuploadsuploads/') }}{{ A.imagActivity }}" style="width:30px;height: 30px"></td>
+               <td><a class="btn btn-primary" href="{{ path('update_activity',{'idActivite':A.idActivite}) }}">Update</a></td>
+               <td><a class="btn btn-danger" href="{{ path('delete_activity',{'idActivite':A.idActivite}) }}">Delete</a></td>
+           </tr>
+        {% endfor %}
+    </table>
+    </div>
+</center>
+{% endblock %}
