@@ -1,0 +1,14 @@
+reservation_activite:
+    resource: "@ReservationActiviteBundle/Resources/config/routing.yml"
+    prefix:   /resactivite
+
+activity:
+    resource: "@ActivityBundle/Resources/config/routing.yml"
+    prefix:   /activite
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /user
